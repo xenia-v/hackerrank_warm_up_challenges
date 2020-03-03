@@ -4,3 +4,4 @@ Python 3 solutions for the HackerRank Warm-Up challenges.
 Currently includes:
 - Sock Merchant
 - Counting Valleys
+- Jumping on the Clouds
