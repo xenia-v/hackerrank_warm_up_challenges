@@ -1,0 +1,49 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Finds all 'a' characters within string s whilst still minding i being smaller than n.
+def findNumOfAs(s, i, n):
+
+    counter = 0
+
+    for j in s:
+        if i < n:
+            if j == 'a':
+                counter += 1
+            i += 1
+
+    return(counter)
+
+# Complete the repeatedString function below.
+def repeatedString(s, n):
+
+    # Define result and calculate the number of repeated full strings s
+    result = 0
+    fullString = n // len(s)
+
+    i = 0
+    result += fullString * findNumOfAs(s, i, n)
+
+    i = fullString * len(s)
+    result += findNumOfAs(s, i, n)
+    
+    return(result)
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    n = int(input())
+
+    result = repeatedString(s, n)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
